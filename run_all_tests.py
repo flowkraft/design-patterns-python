@@ -5,7 +5,7 @@ import os
 base_dir = 'design-patterns-python'
 
 # List of test files
-test_files = ['tests/gof_creational_abstract_factory.py']
+test_files = ['tests/gof_creational_abstract_factory_test.py']
 
 for test_file in test_files:
     print(f"Running tests for {test_file}")
