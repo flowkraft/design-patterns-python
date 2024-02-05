@@ -17,21 +17,21 @@ class Pizza:
     def __str__(self):
         return f"Pizza with {self.dough} dough, {self.sauce} sauce, toppings: {', '.join(self.toppings) if self.toppings else 'no toppings'}"
 
-# Entity: Interface
+# Entity: Builder Interface
 class PizzaBuilder:
-    def prepare_dough(self):
+    def prepare_dough(self, dough):
         pass
 
-    def add_sauce(self):
+    def add_sauce(self, sauce):
         pass
 
-    def add_toppings(self):
+    def add_toppings(self, toppings):
         pass
 
     def build(self):
         pass
 
-# Entity: Base ConcreteBuilder
+# Entity: ConcreteBuilder
 class PizzaBaseBuilder(PizzaBuilder):
     def __init__(self):
         self.pizza = Pizza()
@@ -74,8 +74,14 @@ class PizzaDirector:
     def __init__(self, builder):
         self._builder = builder
 
-    def make_pizza(self):
-        return self._builder.prepare_dough().add_sauce().add_toppings().build()
+    def make_pizza(self, dough=None, sauce=None, toppings=None):
+        if dough:
+            self._builder.prepare_dough(dough)
+        if sauce:
+            self._builder.add_sauce(sauce)
+        if toppings:
+            self._builder.add_toppings(toppings)
+        return self._builder.build()
 
 # Client code example
 if __name__ == "__main__":

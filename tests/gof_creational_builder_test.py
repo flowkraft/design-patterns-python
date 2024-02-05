@@ -1,5 +1,5 @@
 import unittest
-from pizza_builder import PizzaBaseBuilder, MargheritaPizzaBuilder, PizzaDirector
+from patterns.gof_creational_builder import PizzaBaseBuilder, MargheritaPizzaBuilder, PizzaDirector
 
 class TestPizzaBaseBuilder(unittest.TestCase):
     def setUp(self):
