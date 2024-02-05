@@ -9,7 +9,7 @@ base_dir = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, base_dir)
 
 # List of test files
-test_files = ['patterns/gof_creational_abstract_factory_test.py']
+test_files = ['tests/gof_creational_abstract_factory_test.py', 'tests/gof_creational_builder_test.py']
 
 for test_file in test_files:
     print(f"Running tests for {test_file}")
